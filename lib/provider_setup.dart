@@ -3,7 +3,6 @@ import 'package:zojatech/data/provider/product_provider.dart';
 import 'package:zojatech/data/provider/transaction_provider.dart';
 import 'package:zojatech/res/import/import.dart';
 
-import 'data/provider/auth_provider.dart';
 
 // final locationProvider = ChangeNotifierProvider((ref) => LocationProvider());
 // final authenticationProvider =

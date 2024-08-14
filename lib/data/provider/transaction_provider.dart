@@ -1,5 +1,3 @@
-
-
 import '../../res/import/import.dart';
 
 class TransactionProvider extends ChangeNotifier {
@@ -53,7 +51,6 @@ class TransactionProvider extends ChangeNotifier {
         onSuccess?.call();
       }
     } catch (e) {
-      print(e);
       onFailure?.call();
     } finally {
       notifyListeners();
@@ -72,7 +69,6 @@ class TransactionProvider extends ChangeNotifier {
       onSuccess?.call();
       return;
     } catch (e) {
-      print(e);
       onFailure?.call();
     } finally {
       notifyListeners();
@@ -90,10 +86,9 @@ class TransactionProvider extends ChangeNotifier {
       showSuccessToast(message: 'Transaction Added ', context: ctx);
       onSuccess?.call();
       return;
-    } catch (e, s) {
-      print(e);
-      print(s);
+    } catch (e) {
       onFailure?.call();
+       rethrow;
     } finally {
       notifyListeners();
     }

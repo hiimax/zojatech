@@ -6,7 +6,7 @@ class ThemeHelper {
   static ThemeData lightTheme = ThemeData(
     fontFamily: StringConstants.zojatechFontFamily,
     extensions: [
-      zojatechDesignSystem(
+      ZojatechDesignSystem(
         zojatechGrey: zojatechGrey,
         zojatechBackgroundColor: zojatechBackgroundColor,
         zojatechTextColor: zojatechTextColor,
@@ -125,7 +125,7 @@ class ThemeHelper {
 
   static ThemeData darkTheme = ThemeData(
     extensions: [
-      zojatechDesignSystem(
+      ZojatechDesignSystem(
         zojatechGrey: zojatechGrey,
         zojatechBackgroundColor: zojatechBackgroundColor,
         zojatechTextColor: zojatechTextColor,
@@ -229,7 +229,7 @@ class ThemeHelper {
   );
 }
 
-class zojatechDesignSystem extends ThemeExtension<zojatechDesignSystem> {
+class ZojatechDesignSystem extends ThemeExtension<ZojatechDesignSystem> {
   Color? cardStrokeColor;
   Color? zojatechGrey;
   Color? zojatechBackgroundColor;
@@ -238,7 +238,7 @@ class zojatechDesignSystem extends ThemeExtension<zojatechDesignSystem> {
   Color? zojatechFountainblueColor;
   Color? containerBg;
 
-  zojatechDesignSystem({
+  ZojatechDesignSystem({
     this.cardStrokeColor,
     this.zojatechGrey,
     this.zojatechBackgroundColor,
@@ -249,7 +249,7 @@ class zojatechDesignSystem extends ThemeExtension<zojatechDesignSystem> {
   });
 
   @override
-  ThemeExtension<zojatechDesignSystem> copyWith({
+  ThemeExtension<ZojatechDesignSystem> copyWith({
     Color? cardStrokeColor,
     Color? zojatechGrey,
     Color? zojatechBackgroundColor,
@@ -258,7 +258,7 @@ class zojatechDesignSystem extends ThemeExtension<zojatechDesignSystem> {
     Color? zojatechFountainblueColor,
     Color? containerBg,
   }) {
-    return zojatechDesignSystem()
+    return ZojatechDesignSystem()
       ..cardStrokeColor = cardStrokeColor ?? this.cardStrokeColor
       ..zojatechGrey = zojatechGrey ?? this.zojatechGrey
       ..zojatechBackgroundColor =
@@ -274,14 +274,14 @@ class zojatechDesignSystem extends ThemeExtension<zojatechDesignSystem> {
   }
 
   @override
-  ThemeExtension<zojatechDesignSystem> lerp(
-      covariant ThemeExtension<zojatechDesignSystem>? other, double t) {
+  ThemeExtension<ZojatechDesignSystem> lerp(
+      covariant ThemeExtension<ZojatechDesignSystem>? other, double t) {
     if (other == null) {
       return this;
     }
-    final zojatechDesignSystem otherDesignSystem =
-        other as zojatechDesignSystem;
-    return zojatechDesignSystem(
+    final ZojatechDesignSystem otherDesignSystem =
+        other as ZojatechDesignSystem;
+    return ZojatechDesignSystem(
       cardStrokeColor:
           Color.lerp(cardStrokeColor, otherDesignSystem.cardStrokeColor, t),
       zojatechGrey: Color.lerp(zojatechGrey, otherDesignSystem.zojatechGrey, t),
@@ -299,6 +299,6 @@ class zojatechDesignSystem extends ThemeExtension<zojatechDesignSystem> {
 }
 
 extension ThemeDataExtension on BuildContext {
-  zojatechDesignSystem? get designSystem =>
-      Theme.of(this).extension<zojatechDesignSystem>();
+  ZojatechDesignSystem? get designSystem =>
+      Theme.of(this).extension<ZojatechDesignSystem>();
 }

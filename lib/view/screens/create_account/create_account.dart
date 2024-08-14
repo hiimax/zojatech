@@ -1,5 +1,4 @@
 import 'package:flutter/gestures.dart';
-import 'package:zojatech/models/user_model.dart';
 
 import '../../../res/import/import.dart';
 
@@ -175,7 +174,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen>
                                         auth.signup(
                                           ctx: context,
                                           onFailure: () {
-                                            print('failure');
+                                            
                                           },
                                           onSuccess: () {
                                             context.goNamed(RouteNames.login);

@@ -1,7 +1,4 @@
-import 'package:zojatech/data/data_exception/data_exception.dart';
-import 'package:zojatech/models/user_model.dart';
 
-import '../../data/remote/remote_services/auth_service.dart';
 import '../../res/import/import.dart';
 
 class AuthHttpService extends AuthDataBase implements AuthService {

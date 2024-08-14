@@ -1,7 +1,3 @@
-import 'package:zojatech/data/remote/remote_services/auth_service.dart';
-import 'package:zojatech/models/user_model.dart';
-import 'package:zojatech/repository/authentication/authentication_http_service.dart';
-
 import '../../res/import/import.dart';
 
 class AuthenticationProvider extends ChangeNotifier {
@@ -45,12 +41,11 @@ class AuthenticationProvider extends ChangeNotifier {
         await prefs.setString('token', _user?.token ?? '');
         showSuccessToast(message: 'Login Successful ', context: ctx);
         await Future.delayed(const Duration(seconds: 2));
-        print(_user?.token ?? '');
         onSuccess?.call();
       }
     } catch (e) {
-      print(e);
       onFailure?.call();
+      rethrow;
     } finally {
       notifyListeners();
     }
@@ -71,15 +66,14 @@ class AuthenticationProvider extends ChangeNotifier {
       } else {
         _user = await service.signup(user: user);
         final SharedPreferences prefs = await SharedPreferences.getInstance();
-        print('token ${_user?.id}');
         await prefs.setString('token', _user?.token ?? '');
         showSuccessToast(message: 'Signup Successful ', context: ctx);
         await Future.delayed(const Duration(seconds: 2));
         onSuccess?.call();
       }
     } catch (e) {
-      print(e);
       onFailure?.call();
+      rethrow;
     } finally {
       notifyListeners();
     }

@@ -1,6 +1,5 @@
 import 'dart:io' as io;
 
-import 'package:zojatech/models/user_model.dart';
 import 'package:zojatech/res/import/import.dart';
 
  class AuthDataBase {

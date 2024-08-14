@@ -1,6 +1,3 @@
-import 'package:zojatech/data/remote/remote_services/product_service.dart';
-import 'package:zojatech/repository/products/product_http_service.dart';
-
 import '../../res/import/import.dart';
 
 class ProductsProvider extends ChangeNotifier {
@@ -54,8 +51,8 @@ class ProductsProvider extends ChangeNotifier {
         onSuccess?.call();
       }
     } catch (e) {
-      print(e);
       onFailure?.call();
+      rethrow;
     } finally {
       notifyListeners();
     }
@@ -73,8 +70,8 @@ class ProductsProvider extends ChangeNotifier {
       onSuccess?.call();
       return;
     } catch (e) {
-      print(e);
       onFailure?.call();
+      rethrow;
     } finally {
       notifyListeners();
     }
@@ -91,10 +88,9 @@ class ProductsProvider extends ChangeNotifier {
       showSuccessToast(message: 'Product Added ', context: ctx);
       onSuccess?.call();
       return;
-    } catch (e,s) {
-      print(e);
-      print(s);
+    } catch (e) {
       onFailure?.call();
+      rethrow;
     } finally {
       notifyListeners();
     }
